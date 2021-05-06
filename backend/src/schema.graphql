@@ -9,9 +9,14 @@ input LinkOrderByInput {
     createdAt: Sort
 }
 
+type Feed {
+  links: [Link!]!
+  count: Int!
+}
+
 type Query {
     info: String!
-    feed(filter: String, skip: Int, take: Int, orderBy: LinkOrderByInput): [Link!]!
+    feed(filter: String, skip: Int, take: Int, orderBy: LinkOrderByInput): Feed!
     link(id: ID!): Link
 }
 
