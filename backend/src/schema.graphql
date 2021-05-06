@@ -35,6 +35,7 @@ type Link {
     url: String!
     postedBy: User
     votes: [Vote!]!
+    createdAt: DateTime!
 }
 
 type AuthPayload {
