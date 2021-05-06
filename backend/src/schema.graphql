@@ -59,3 +59,5 @@ type Vote {
     link: Link!
     user: User!
 }
+
+scalar DateTime
