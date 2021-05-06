@@ -1,6 +1,17 @@
+enum Sort {
+    asc
+    desc
+}
+
+input LinkOrderByInput {
+    description: Sort
+    url: Sort
+    createdAt: Sort
+}
+
 type Query {
     info: String!
-    feed(filter: String, skip: Int, take: Int): [Link!]!
+    feed(filter: String, skip: Int, take: Int, orderBy: LinkOrderByInput): [Link!]!
     link(id: ID!): Link
 }
 

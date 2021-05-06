@@ -12,11 +12,11 @@ async function feed(parent, args, context) {
         where,
         skip: args.skip,
         take: args.take,
+        orderBy: args.orderBy,
     });
 
     return links;
 }
-
 module.exports = {
     feed,
 };
