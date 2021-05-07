@@ -10,8 +10,9 @@ input LinkOrderByInput {
 }
 
 type Feed {
-  links: [Link!]!
-  count: Int!
+    id: ID!
+    links: [Link!]!
+    count: Int!
 }
 
 type Query {

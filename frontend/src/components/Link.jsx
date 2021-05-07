@@ -2,37 +2,19 @@
 /* eslint-disable react/button-has-type */
 /* eslint-disable react/prop-types */
 import React from 'react';
-import { useMutation, gql } from '@apollo/client';
+import { useMutation } from '@apollo/client';
 import { AUTH_TOKEN, LINKS_PER_PAGE } from '../constants';
+import { FEED_QUERY } from '../queries/feed';
+import { VOTE_MUTATION } from '../queries/votes';
 import { timeDifferenceForDate } from '../utils';
-
-const VOTE_MUTATION = gql`
-    mutation VoteMutation($linkId: ID!) {
-        vote(linkId: $linkId) {
-            id
-            link {
-                id
-                votes {
-                    id
-                    user {
-                        id
-                    }
-                }
-            }
-            user {
-                id
-            }
-        }
-    }
-`;
 
 const Link = (props) => {
     const { link, index } = props;
     const authToken = localStorage.getItem(AUTH_TOKEN);
 
-    // const take = LINKS_PER_PAGE;
-    // const skip = 0;
-    // const orderBy = { createdAt: 'desc' };
+    const take = LINKS_PER_PAGE;
+    const skip = 0;
+    const orderBy = { createdAt: 'desc' };
 
     const [vote] = useMutation(VOTE_MUTATION, {
         variables: {
@@ -41,6 +23,11 @@ const Link = (props) => {
         update(cache, { data: { vote } }) {
             const { feed } = cache.readQuery({
                 query: FEED_QUERY,
+                variables: {
+                    take,
+                    skip,
+                    orderBy,
+                },
             });
 
             const updatedLinks = feed.links.map((feedLink) => {
@@ -59,6 +46,11 @@ const Link = (props) => {
                     feed: {
                         links: updatedLinks,
                     },
+                },
+                variables: {
+                    take,
+                    skip,
+                    orderBy,
                 },
             });
         },

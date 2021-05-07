@@ -28,14 +28,6 @@ Open your browser and navigate to `http://localhost:4000` to view the GraphQL Pl
 
 ## Frontend
 
-### Installation
-
-To install dependencies, use:
-
-```
-yarn add
-```
-
 ### Usage
 
 To run the development server, use:

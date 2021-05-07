@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useMutation, gql } from '@apollo/client';
 import { useHistory } from 'react-router';
-import { FEED_QUERY } from './LinkList';
+import { FEED_QUERY } from '../queries/feed';
 import { LINKS_PER_PAGE } from '../constants';
 
 const CREATE_LINK_MUTATION = gql`

@@ -1,32 +1,9 @@
 /* eslint-disable react/button-has-type */
 import React, { useState } from 'react';
 import { useLazyQuery } from '@apollo/client';
-import gql from 'graphql-tag';
 import Link from './Link';
+import { FEED_SEARCH_QUERY } from '../queries/feed';
 
-const FEED_SEARCH_QUERY = gql`
-    query FeedSearchQuery($filter: String!) {
-        feed(filter: $filter) {
-            count
-            links {
-                id
-                url
-                description
-                createdAt
-                postedBy {
-                    id
-                    name
-                }
-                votes {
-                    id
-                    user {
-                        id
-                    }
-                }
-            }
-        }
-    }
-`;
 const Search = () => {
     const [searchFilter, setSearchFilter] = useState('');
     const [executeSearch, { data }] = useLazyQuery(
