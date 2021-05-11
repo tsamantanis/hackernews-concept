@@ -8,7 +8,7 @@ const Header = () => {
     const history = useHistory();
     const authToken = localStorage.getItem(AUTH_TOKEN);
     return (
-        <div className="flex pa1 justify-between nowrap orange">
+        <div className="flex pa1 justify-between nowrap header">
             <div className="flex flex-fixed black">
                 <div className="fw7 mr1">Hacker News</div>
                 <Link to="/" className="ml1 no-underline black">

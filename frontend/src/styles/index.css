@@ -4,16 +4,22 @@ body {
     font-family: Verdana, Geneva, sans-serif;
 }
 
+.header {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    padding-top: 1rem;
+    padding: 1.5rem;
+    background-color: #F97721;
+    color: #040202;
+    border-radius: 1rem;
+}
+
 input {
     max-width: 500px;
 }
 
 .gray {
     color: #828282;
-}
-
-.orange {
-    background-color: #ff6600;
 }
 
 .background-gray {
