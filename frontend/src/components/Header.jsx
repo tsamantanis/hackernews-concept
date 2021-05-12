@@ -12,21 +12,21 @@ const Header = () => {
             <div className="flex flex-fixed black">
                 <div className="fw7 mr1">Hacker News</div>
                 <Link to="/" className="ml1 no-underline black">
-                    new
+                    New
                 </Link>
                 <div className="ml1">|</div>
                 <Link to="/top" className="ml1 no-underline black">
-                    top
+                    Top
                 </Link>
                 <div className="ml1">|</div>
                 <Link to="/search" className="ml1 no-underline black">
-                    search
+                    Search
                 </Link>
                 {authToken && (
                     <div className="flex">
                         <div className="ml1">|</div>
                         <Link to="/create" className="ml1 no-underline black">
-                            submit
+                            Submit
                         </Link>
                     </div>
                 )}
@@ -34,20 +34,20 @@ const Header = () => {
             <div className="flex flex-fixed">
                 {authToken ? (
                     <button
-                        className="ml1 pointer black"
+                        className="ml1 black button-header"
                         onClick={() => {
                             localStorage.removeItem(AUTH_TOKEN);
                             history.push('/');
                         }}
                     >
-                        logout
+                        Logout
                     </button>
                 ) : (
                     <Link
                         to="/login"
                         className="ml1 no-underline black"
                     >
-                        login
+                        Login
                     </Link>
                 )}
             </div>

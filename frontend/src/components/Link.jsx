@@ -9,7 +9,7 @@ import { VOTE_MUTATION } from '../queries/votes';
 import { timeDifferenceForDate } from '../utils';
 
 const Link = (props) => {
-    const { link, index } = props;
+    const { link } = props;
     const authToken = localStorage.getItem(AUTH_TOKEN);
 
     const take = LINKS_PER_PAGE;
@@ -56,12 +56,8 @@ const Link = (props) => {
         },
     });
     return (
-        <div className="flex mt2 items-start">
-            <div className="flex items-center">
-                <span className="gray">
-                    {index + 1}
-                    .
-                </span>
+        <div className="mt2 ml1 mr1 items-center link w-30 h5">
+            <div className="flex items-center link-vote">
                 {authToken && (
                     <button
                         className="ml1 gray f11"
@@ -74,11 +70,12 @@ const Link = (props) => {
             </div>
             <div className="ml1">
                 <div>
-                    {link.description}
-                    {' '}
-                    (
-                    {link.url}
-                    )
+                    <a className="link-tag" href={link.url} target="_blank" referrerPolicy="no-referrer" rel="noreferrer">
+                        {link.url}
+                    </a>
+                    <div className="link-description">
+                        {link.description}
+                    </div>
                 </div>
                 {authToken && (
                     <div className="f6 lh-copy gray">

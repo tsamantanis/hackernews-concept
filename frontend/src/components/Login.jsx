@@ -102,22 +102,23 @@ const Login = () => {
             </div>
             <div className="flex mt3">
                 <button
-                    className="pointer mr2 button"
-                    onClick={formState.login ? login : signup}
-                >
-                    {formState.login ? 'login' : 'create account'}
-                </button>
-                <button
-                    className="pointer button"
+                    className="button-link"
                     onClick={() => setFormState({
                         ...formState,
                         login: !formState.login,
                     })}
                 >
                     {formState.login
-                        ? 'need to create an account?'
-                        : 'already have an account?'}
+                        ? 'Need to create an account?'
+                        : 'Already have an account?'}
                 </button>
+                <button
+                    className="pointer mr2 button"
+                    onClick={formState.login ? login : signup}
+                >
+                    {formState.login ? 'Login' : 'Sign Up'}
+                </button>
+
             </div>
         </div>
     );

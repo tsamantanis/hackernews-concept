@@ -2,28 +2,69 @@ body {
     margin: 0;
     padding: 0;
     font-family: Verdana, Geneva, sans-serif;
+    color: #040202;
 }
 
 .header {
     margin-top: 1rem;
     margin-bottom: 1rem;
-    padding-top: 1rem;
     padding: 1.5rem;
     background-color: #F97721;
-    color: #040202;
     border-radius: 1rem;
 }
 
+.link-tag {
+    background-color: rgba(46, 196, 182, 0.2);
+    color: #2ec4b6;
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+    text-decoration: none;
+    position: absolute;
+    bottom: 1rem;
+    right: 1rem;
+}
+
+.link-vote {
+    background-color: rgba(46, 196, 182, 0.2);
+    padding: 0.5rem 0.5rem;
+    border-radius: 0.5rem;
+    text-decoration: none;
+    position: absolute;
+    bottom: 1rem;
+    left: 1rem;
+}
+
+.link-vote button {
+    color: #2ec4b6;
+    background: none;
+    border: none;
+    padding: 0.25rem 0.5rem;
+    margin: 0;
+}
+
+.link {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    background-color: rgb(250, 245, 240);
+    border-radius: 1rem;
+    padding: 1.5rem;
+    position: relative;
+}
+
 input {
+    font-size: 12pt;
     max-width: 500px;
+    border-radius: 0.5rem;
+    border: none;
+    padding: 0.75rem 0.75rem;
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+    outline: none;
+    background-color: rgba(46, 196, 182, 0.2);
 }
 
 .gray {
     color: #828282;
-}
-
-.background-gray {
-    background-color: rgb(246, 246, 239);
 }
 
 .f11 {
@@ -35,15 +76,37 @@ input {
 }
 
 .button {
-    font-family: monospace;
-    font-size: 10pt;
-    color: black;
-    background-color: buttonface;
+    font-size: 12pt;
+    color: #040202;
+    background-color: #F97721;
     text-align: center;
-    padding: 2px 6px 3px;
-    border-width: 2px;
-    border-style: outset;
-    border-color: buttonface;
+    padding: 0.75rem 0.75rem;
     cursor: pointer;
     max-width: 250px;
+    border-radius: 0.5rem;
+    border: none;
+}
+
+.button-link {
+    color: #F97721;
+    background: none;
+    font-size: 12pt;
+    max-width: 250px;
+    cursor: pointer;
+    text-align: center;
+    padding: 0.75rem 0.75rem;
+    border-radius: 0.5rem;
+    border: none;
+}
+
+.button-header {
+    color: #040202;
+    background: none;
+    font-size: 12pt;
+    max-width: 250px;
+    cursor: pointer;
+    text-align: center;
+    border-radius: 0.5rem;
+    border: none;
+    margin: 0;
 }
